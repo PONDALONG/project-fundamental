@@ -43,7 +43,7 @@ export default function SignUp() {
       student_no: data.get('student_no')
     }
     
-    fetch("http://localhost:3333/register", {
+    fetch("https://36e9-180-183-69-235.ngrok-free.app/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
