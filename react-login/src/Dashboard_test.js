@@ -15,6 +15,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Navbar from "./components/Navbar";
 
 function Copyright() {
   return (
@@ -29,12 +30,14 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [1];
+
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function Album() {
+    
   useEffect(() => {
     const token = localStorage.getItem("token");
     fetch("http://localhost:3333/authen", {
@@ -68,13 +71,8 @@ export default function Album() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <CameraIcon sx={{ mr: 2 }} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
-        </Toolbar>
+      <AppBar >
+        <Navbar/>
       </AppBar>
       <main>
         {/* Hero unit */}
@@ -93,25 +91,15 @@ export default function Album() {
               color="text.primary"
               gutterBottom
             >
-              Album layout
+              Fundamental
             </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              color="text.secondary"
-              paragraph
-            >
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
-            </Typography>
+            
             <Stack
               sx={{ pt: 4 }}
               direction="row"
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained" onClick={handleLogout}>ออกจากระบบ</Button>
               <Button variant="outlined">Secondary action</Button>
             </Stack>
           </Container>
@@ -155,6 +143,7 @@ export default function Album() {
           </Grid>
         </Container>
       </main>
+
       {/* Footer */}
       <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>

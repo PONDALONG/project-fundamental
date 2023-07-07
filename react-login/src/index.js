@@ -6,6 +6,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './Login';
 import Dashboard from './Dashboard';
 import Register from './register';
+import Dashboard_test  from './Dashboard_test';
+import Navbar from "./components/Navbar";
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,6 +20,9 @@ root.render(
     <Route path="/login" element={<Login />} /> 
     <Route path="/register" element={<Register />} /> 
     <Route path="/dashboard" element={<Dashboard />} /> 
+    <Route path="/dashboard_test" element={<Dashboard_test />} /> 
+    <Route path="/Navbar" element={<Navbar />} /> 
+   
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')
