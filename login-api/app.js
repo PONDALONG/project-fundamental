@@ -21,13 +21,15 @@ const connection = mysql.createConnection({
 app.post("/register", jsonParser, function (req, res, next) {
   bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
     connection.query(
-      "INSERT INTO user  (email, password, f_name, l_name, student_no) VALUE (?, ?, ?, ?, ?)",
+      "INSERT INTO user  (email, password, f_name, l_name, student_no, branch, Org_s) VALUE (?, ?, ?, ?, ?,?,?)",
       [
         req.body.email,
         hash,
         req.body.f_name,
         req.body.l_name,
         req.body.student_no,
+        req.body.Org_s,
+        req.body.branch
       ],
       function (err, results, fields) {
         if (err) {
