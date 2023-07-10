@@ -44,7 +44,7 @@ export default function SignInSide() {
       password: data.get("password"),
     };
 
-    fetch(" https://36e9-180-183-69-235.ngrok-free.app/login", {
+    fetch("  https://de37-223-206-132-85.ngrok-free.app/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ export default function SignInSide() {
       .then((data) => {
         if (data.status === "ok") {
           localStorage.setItem("token", data.token);
-          window.location = "/Dashboard";
+          window.location = "/Home";
           alert("เข้าสู่ระบบสำเร็จ");
         } else {
           alert("เข้าสู่ระบบไม่สำเร็จ");
@@ -139,6 +139,7 @@ export default function SignInSide() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
                 color="secondary"
+                
               >
                 Sign In
               </Button>

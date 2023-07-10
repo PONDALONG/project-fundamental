@@ -4,10 +4,10 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './Login';
-import Dashboard from './Dashboard';
 import Register from './register';
-import Dashboard_test  from './Dashboard_test';
+import Home  from './components/Home';
 import Navbar from "./components/Navbar";
+
 
 
 
@@ -19,8 +19,7 @@ root.render(
     <Route path="/" element={<Login />} /> 
     <Route path="/login" element={<Login />} /> 
     <Route path="/register" element={<Register />} /> 
-    <Route path="/dashboard" element={<Dashboard />} /> 
-    <Route path="/dashboard_test" element={<Dashboard_test />} /> 
+    <Route path="/Home" element={<Home />} /> 
     <Route path="/Navbar" element={<Navbar />} /> 
    
     </Routes>
